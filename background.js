@@ -5,6 +5,7 @@
     var COLOR_RANGE = 4194303;
     var BLUR_PASSES = 5;
     var BLUR_SIZE = 20;
+    var FPS = 12; // max FPS (60 is recommended but wibbly-wobbly-timey-wimey looks better when its a bit slower :D)
     var nc = 10;
     var sm = 30;
     var sx = 40;
@@ -197,7 +198,7 @@
             }
 
             boxBlurCanvasRGB(CANVAS_ID, 0, 0, cw, ch, BLUR_SIZE, BLUR_PASSES);
-            requestAnimationFrame(update);
+            setTimeout(function(){requestAnimationFrame(update)}, 1000 / FPS);
         }
 
     init();
