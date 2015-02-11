@@ -3,7 +3,6 @@
 
     var BG_COLOR = '#000000';
     var COLOR_RANGE = 4194303;
-    var SPEED = 100; // in ms
     var BLUR_PASSES = 5;
     var BLUR_SIZE = 20;
     var nc = 10;
@@ -183,7 +182,7 @@
             }
 
             boxBlurCanvasRGB(CANVAS_ID, 0, 0, cw, ch, BLUR_SIZE, BLUR_PASSES);
-            setInterval(update, SPEED);
+            requestAnimationFrame(update);
         }
 
         function update() {
@@ -198,6 +197,7 @@
             }
 
             boxBlurCanvasRGB(CANVAS_ID, 0, 0, cw, ch, BLUR_SIZE, BLUR_PASSES);
+            requestAnimationFrame(update);
         }
 
     init();
